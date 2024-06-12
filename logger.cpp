@@ -18,7 +18,10 @@ void logger::output_generation(log_level_t lvl, string msg)
 
       for(auto ext: extensions)
       {
-        output("[" + ext() + "]");
+        if(ext != nullptr)
+        {
+          output("[" + ext() + "]");
+        }
       }
 
       output(" " + msg + "\n");
